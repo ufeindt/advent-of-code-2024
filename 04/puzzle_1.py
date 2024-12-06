@@ -1,7 +1,7 @@
 import re
 
 
-def load_input(filename: str = "04/input.txt") -> list[str]:
+def load_input(filename: str = "04/input") -> list[str]:
     with open(filename) as f:
         rows = [line.strip() for line in f.readlines()]
 
@@ -46,7 +46,7 @@ def get_pattern_count(patterns: [str], lines: list[str]) -> int:
 
 def main():
     patterns = [r"XMAS", r"SAMX"]
-    test_input = load_input("04/test_input.txt")
+    test_input = load_input("04/test.txt")
     assert get_pattern_count(patterns, test_input) == 18
 
     input = load_input()

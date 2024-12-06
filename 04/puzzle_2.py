@@ -1,4 +1,4 @@
-def load_input(filename: str = "04/input.txt") -> list[str]:
+def load_input(filename: str = "04/input") -> list[str]:
     with open(filename) as f:
         rows = [line.strip() for line in f.readlines()]
 
@@ -26,7 +26,7 @@ def get_pattern_count(crosses: list[tuple[str, str]]) -> int:
 
 
 def main():
-    test_input = load_input("04/test_input.txt")
+    test_input = load_input("04/test_input")
     assert get_pattern_count(test_input) == 9
 
     input = load_input()

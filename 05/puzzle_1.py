@@ -1,5 +1,5 @@
 def load_input(
-    filename: str = "05/input.txt",
+    filename: str = "05/input",
 ) -> tuple[list[tuple[int, int]], list[list[int]]]:
     rules = []
     pages = []
@@ -39,7 +39,7 @@ def get_middle_page_numbers(pages: list[list[int]]) -> list[int]:
 
 
 def main():
-    test_rules, test_pages = load_input(filename="05/test_input.txt")
+    test_rules, test_pages = load_input(filename="05/test_input")
     test_result = sum(
         get_middle_page_numbers(filter_valid_pages(test_rules, test_pages))
     )

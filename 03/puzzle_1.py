@@ -2,7 +2,7 @@ import re
 
 
 def load_input() -> list[list[int]]:
-    with open("03/input.txt") as f:
+    with open("03/input") as f:
         lines = [line.strip() for line in f]
 
     return lines

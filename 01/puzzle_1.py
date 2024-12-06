@@ -1,5 +1,5 @@
 def load_input_to_lists() -> tuple[list[int], list[int]]:
-    with open("01/input.txt") as f:
+    with open("01/input") as f:
         lines = [line.split() for line in f]
 
     return tuple([int(line[k]) for line in lines] for k in range(2))
