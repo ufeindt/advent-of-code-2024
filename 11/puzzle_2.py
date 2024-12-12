@@ -45,7 +45,7 @@ def blink(
 
 
 def solve(
-    filename: str = "11/input", show_progress: bool = True, n_blinks: int = 75
+    filename: str = "11/input", show_progress: bool = False, n_blinks: int = 75
 ) -> int:
     stones = load_input(filename=filename)
     for k in range(n_blinks):
