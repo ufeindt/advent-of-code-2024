@@ -10,17 +10,15 @@ def load_input(filename: str = "18/input") -> list[tuple[int, int]]:
 
 def find_path(
     falling_bytes: list[tuple[int, int]], goal: tuple[int, int], n_fallen: int
-) -> int | None:
+) -> list[tuple[int, int]]:
     directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
     obstacles = set(falling_bytes[:n_fallen])
     queue = [((0, 0), [])]
     visited = {(0, 0)}
-    paths = []
     while queue:
         current, path = queue.pop(0)
         if current == goal:
-            paths.append(path)
-            continue
+            return path
 
         for direction in directions:
             next_coords = (current[0] + direction[0], current[1] + direction[1])
@@ -34,17 +32,16 @@ def find_path(
             ):
                 visited.add(next_coords)
                 queue.append((next_coords, path + [next_coords]))
-    if not paths:
-        return None
 
-    return min([len(path) for path in paths])
+    return []
 
 
 def solve(
     filename: str = "18/input", goal: tuple[int, int] = (70, 70), n_fallen: int = 1024
 ) -> int | None:
     falling_bytes = load_input(filename=filename)
-    return find_path(falling_bytes, goal, n_fallen)
+    path = find_path(falling_bytes, goal, n_fallen)
+    return len(path)
 
 
 def main():
