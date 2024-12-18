@@ -1,7 +1,7 @@
 from puzzle_1 import load_input, solve_maze
 
 
-def solve(filename="16/input") -> int | None:
+def solve(filename: str = "16/input") -> int | None:
     walls, start, end = load_input(filename=filename)
     paths = solve_maze(walls, start, end)
 

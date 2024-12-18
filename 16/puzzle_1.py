@@ -17,7 +17,7 @@ DIRECTIONS = {
 
 
 def load_input(
-    filename="16/input",
+    filename: str = "16/input",
 ) -> tuple[set[tuple[int, int]], tuple[int, int], tuple[int, int]]:
     with open(filename) as f:
         lines = [line.strip() for line in f]
@@ -86,7 +86,7 @@ def solve_maze(
     return best_paths
 
 
-def solve(filename="16/input") -> int | None:
+def solve(filename: str = "16/input") -> int | None:
     walls, start, end = load_input(filename=filename)
     paths = solve_maze(walls, start, end)
 

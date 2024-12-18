@@ -46,18 +46,6 @@ class Computer(BaseModel):
                     self.cdv(operand)
 
             self.pointer += 2
-            continue
-            print(
-                opcode,
-                operand,
-                self.register_a,
-                self.register_a % 8,
-                self.register_b,
-                self.register_b % 8,
-                self.register_c,
-                self.register_c % 8,
-                self.output,
-            )
 
     def adv(self, operand: int):
         value = self.get_combo_value(operand)
@@ -89,7 +77,7 @@ class Computer(BaseModel):
         self.register_c = self.register_a // 2**value
 
 
-def load_input(filename="17/input") -> Computer:
+def load_input(filename: str = "17/input") -> Computer:
     input = {}
     with open(filename) as f:
         for line in f:
@@ -102,7 +90,7 @@ def load_input(filename="17/input") -> Computer:
     return Computer(**input)
 
 
-def solve(filename="17/input") -> str:
+def solve(filename: str = "17/input") -> str:
     computer = load_input(filename=filename)
     computer.run_instructions()
     return ",".join([str(o) for o in computer.output])

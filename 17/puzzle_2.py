@@ -17,18 +17,10 @@ def solve(filename="17/input") -> int:
                     new_solutions.append(a)
         solutions = new_solutions
 
-        # print(solutions)
     return min(solutions)
 
 
 def main():
-    # for a in range(1, 8):
-    #     computer = load_input(filename="17/input")
-    #     computer.register_a = 5 * 8**3 + 6 * 8**2 + 1 * 8 + a
-    #     computer.run_instructions()
-    #     print(a, computer.output)
-    #
-    # return
     assert solve(filename="17/part_2_test_input") == 117440
     print(solve())
 
