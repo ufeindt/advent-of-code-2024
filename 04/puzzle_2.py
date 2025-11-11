@@ -1,4 +1,4 @@
-def load_input(filename: str = "04/input") -> list[str]:
+def load_input(filename: str = "04/input") -> list[tuple[str, str]]:
     with open(filename) as f:
         rows = [line.strip() for line in f.readlines()]
 
@@ -7,8 +7,8 @@ def load_input(filename: str = "04/input") -> list[str]:
 
     return [
         (
-            f"{rows[y-1][x-1]}{rows[y][x]}{rows[y+1][x+1]}",
-            f"{rows[y-1][x+1]}{rows[y][x]}{rows[y+1][x-1]}",
+            f"{rows[y - 1][x - 1]}{rows[y][x]}{rows[y + 1][x + 1]}",
+            f"{rows[y - 1][x + 1]}{rows[y][x]}{rows[y + 1][x - 1]}",
         )
         for x in range(1, n_columns - 1)
         for y in range(1, n_rows - 1)

@@ -37,7 +37,7 @@ def load_input(filename: str = "04/input") -> list[str]:
     return [*rows, *columns, *diagonals]
 
 
-def get_pattern_count(patterns: [str], lines: list[str]) -> int:
+def get_pattern_count(patterns: list[str], lines: list[str]) -> int:
     return sum(
         len([match for pattern in patterns for match in re.findall(pattern, line)])
         for line in lines
