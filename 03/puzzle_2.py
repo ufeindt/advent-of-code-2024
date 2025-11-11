@@ -1,6 +1,6 @@
 import re
-from puzzle_1 import load_input
 
+from puzzle_1 import load_input
 
 if __name__ == "__main__":
     lines = load_input()

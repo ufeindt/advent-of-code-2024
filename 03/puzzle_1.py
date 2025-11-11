@@ -1,7 +1,7 @@
 import re
 
 
-def load_input() -> list[list[int]]:
+def load_input() -> list[str]:
     with open("03/input") as f:
         lines = [line.strip() for line in f]
 
